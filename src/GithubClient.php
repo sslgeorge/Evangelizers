@@ -5,8 +5,10 @@ namespace C3P0\App;
 class GithubClient
 {
     protected $curl_handler;
+
     protected $username;
     
+
     public function __construct()
     {
         $this->curl_handler = curl_init();
