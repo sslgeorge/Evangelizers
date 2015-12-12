@@ -5,6 +5,7 @@ namespace C3P0\App;
 class GithubClient
 {
     protected $curl_handler;
+    protected $username;
     
     public function __construct()
     {
@@ -13,9 +14,21 @@ class GithubClient
         curl_setopt($this->curl_handler, CURLOPT_RETURNTRANSFER, true);
     }
     
-    public function getRepos($username)
+    public function getRepositories()
     {
-        curl_setopt($this->curl_handler, CURLOPT_URL, "https://api.github.com/users/$username/repos");
-        echo (curl_exec($this->curl_handler));
+        curl_setopt($this->curl_handler, CURLOPT_URL, "https://api.github.com/users/".$this->username."/repos");
+        $repos_json = curl_exec($this->curl_handler);
+        $repos_array = json_decode($repos_json, true);
+        return $repos_array;
+    }
+    
+    public function getRepositoriesCount()
+    {
+        return count($this->getRepositories());
+    }
+    
+    public function setUsername($username)
+    {
+        $this->username = $username;
     }
 }
