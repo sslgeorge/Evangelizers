@@ -16,6 +16,13 @@ class GithubClient
         curl_setopt($this->curl_handler, CURLOPT_RETURNTRANSFER, true);
     }
     
+    public function __call($methodName, $args)
+    {
+        $name = strtolower(substr($methodName, 3, strlen($methodName)-3));
+        $data = $this->get($name);
+        return $data;
+    }
+    
     public function getRepositories()
     {
         curl_setopt($this->curl_handler, CURLOPT_URL, "https://api.github.com/users/".$this->username."/repos");
@@ -24,13 +31,31 @@ class GithubClient
         return $repos_array;
     }
     
+    
     public function getRepositoriesCount()
     {
         return count($this->getRepositories());
     }
     
+    public function getRepositoriesName()
+    {
+        return $this->get('name');
+    }
+    
     public function setUsername($username)
     {
         $this->username = $username;
+    }
+    
+    private function get($key)
+    {
+        $repos = $this->getRepositories();
+        $result = [];
+        foreach ($repos as $data) {
+            if (array_key_exists($key, $data)) {
+                $result[] = $data[$key];
+            }
+        }
+        return $result;
     }
 }
