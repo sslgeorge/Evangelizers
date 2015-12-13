@@ -5,6 +5,7 @@
 This application ranks github users, based on their level of contribution or number of  personal online repositories.
 Each user can belong to one of 4 Categories
 
+
 * Baby Evangelist 
 * Junior Evangelist
 * Associate Evangelist and
