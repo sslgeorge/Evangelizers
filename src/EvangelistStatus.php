@@ -2,6 +2,8 @@
 
 namespace C3P0\App;
 
+
+
 class EvangelistStatus
 {
     protected $username;

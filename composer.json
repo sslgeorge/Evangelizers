@@ -4,7 +4,7 @@
             "C3P0\\App\\":"src",
             "C3P0\\Tests\\":"tests"
         }
-    }, 
+    },
     "require-dev":{
         "phpunit/phpunit":"5.*"
     }
