@@ -1,6 +1,7 @@
 <?php
 
 namespace C3P0\App;
+
 use C3P0\App\Exceptions\InvalidDataException;
 class GithubClient implements APIClient
 {
@@ -26,7 +27,7 @@ class GithubClient implements APIClient
 
         //throw exception if value of $name is empty
         if ($name == '' || $name == " ") {
-            throw new \InvalidArgumentException("You must pass a valid method name");
+            throw new \InvalidMethodException("You must call a valid method name");
         }
 
         //Get and return the correpsonding array value with key $name
