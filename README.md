@@ -1,4 +1,6 @@
-#Evangelizer
+#Evangelizer 
+[![StyleCI](https://styleci.io/repos/47891772/shield)](https://styleci.io/repos/47891772)
+
 This application ranks github users, based on their level of contribution or number of  personal online repositories.
 Each user can belong to one of 4 Categories
 
