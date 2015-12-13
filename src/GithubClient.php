@@ -2,7 +2,7 @@
 
 namespace C3P0\App;
 use C3P0\App\Exceptions\InvalidDataException;
-class GithubClient
+class GithubClient implements APIClient
 {
     protected $curl_handler;
 
