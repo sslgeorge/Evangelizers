@@ -9,23 +9,31 @@ class EvangelistStatus
     protected $username;
     protected $api_client;
     protected $status;
-    public function __construct($username, $api_client)
+
+    public function __construct($username, APIClient $api_client)
     {
         $this->username = $username;
+        //Set the username
         $api_client->setUsername($username);
+        //Pass api_client instance to local property
         $this->api_client = $api_client;
+        //define the value/level of the user with username above
         $this->defineValue();
     }
 
     public function getStatus()
     {
+        //return the status quote for the user based on their level
         return $this->getStatusQuote();
     }
 
     protected function defineValue()
     {
+        //get the number of repos owned by this user
         $count = $this->api_client->getRepositoriesCount();
 
+        //Based on the number in the variable $count, categorize users and set
+        //status variable to the value
         if ($count >= 5 && $count <= 10) {
             $this->status = "Junior Evangelist";
         } elseif ($count >= 11 && $count<= 20) {
@@ -39,6 +47,7 @@ class EvangelistStatus
 
     protected function getStatusQuote()
     {
+        //based on the status of the user return a quote
         switch($this->status)
         {
             case 'Junior Evangelist':
