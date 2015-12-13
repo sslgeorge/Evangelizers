@@ -2,8 +2,6 @@
 
 namespace C3P0\App;
 
-
-
 class EvangelistStatus
 {
     protected $username;
@@ -26,7 +24,7 @@ class EvangelistStatus
         try {
             //return the status quote for the user based on their level
             return $this->getStatusQuote();
-        } catch(\UnexpectedValueException $ex) {
+        } catch (\UnexpectedValueException $ex) {
             return $ex->message();
         }
     }
@@ -39,28 +37,27 @@ class EvangelistStatus
         //Based on the number in the variable $count, categorize users and set
         //status variable to the value
         if ($count >= 5 && $count <= 10) {
-            $this->status = "Junior Evangelist";
-        } elseif ($count >= 11 && $count<= 20) {
-            $this->status = "Associate Evangelist";
+            $this->status = 'Junior Evangelist';
+        } elseif ($count >= 11 && $count <= 20) {
+            $this->status = 'Associate Evangelist';
         } elseif ($count >= 21) {
-            $this->status = "Senior Evangelist";
+            $this->status = 'Senior Evangelist';
         } else {
-            $this->status = "Baby Evangelist";
+            $this->status = 'Baby Evangelist';
         }
     }
 
     protected function getStatusQuote()
     {
-        if (is_null($this->status) || trim($this->status) == '' || empty($this->status)) {
-            throw new \UnexpectedValueException("The value is not in the right formt");
+        if (is_null($this->status) || trim($this->status) === '' || empty($this->status)) {
+            throw new \UnexpectedValueException('The value is not in the right formt');
         }
         //based on the status of the user return a quote
-        switch($this->status)
-        {
+        switch ($this->status) {
             case 'Junior Evangelist':
                 return "Junior Evangelist: Real knowledge is to know the extent of one's ignorance";
             case 'Associate Evangelist':
-                return "Associate Evangelist: You have come far, but your journey is not yet near end, fight harder";
+                return 'Associate Evangelist: You have come far, but your journey is not yet near end, fight harder';
             case 'Senior Evangelist':
                 return 'Senior Evangelist: Coffee price increased because of you, mighty and powerful :(';
             default:
