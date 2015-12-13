@@ -5,6 +5,9 @@
             "C3P0\\Tests\\":"tests"
         }
     },
+    "require": {
+        "php": ">=5.4.0"
+    },
     "require-dev":{
         "phpunit/phpunit":"5.*"
     }
