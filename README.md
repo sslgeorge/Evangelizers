@@ -1,5 +1,5 @@
-#Evangelizer 
-[![StyleCI](https://styleci.io/repos/47891772/shield)](https://styleci.io/repos/47891772) [![Build Status](https://travis-ci.org/andela-gjames/Evangelizers.svg?branch=develop)](https://travis-ci.org/andela-gjames/Evangelizers)
+#Evangelizer
+[![StyleCI](https://styleci.io/repos/47891772/shield)](https://styleci.io/repos/47891772) [![Circle CI](https://circleci.com/gh/andela-gjames/Evangelizers/tree/develop.svg?style=svg)](https://circleci.com/gh/andela-gjames/Evangelizers/tree/develop)
 
 This application ranks github users, based on their level of contribution or number of  personal online repositories.
 Each user can belong to one of 4 Categories
