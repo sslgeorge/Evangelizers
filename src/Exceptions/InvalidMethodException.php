@@ -1,4 +1,5 @@
 <?php
+
 namespace C3P0\App\Exceptions;
 
 class InvalidMethodException extends \Exception
