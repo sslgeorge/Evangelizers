@@ -23,8 +23,12 @@ class EvangelistStatus
 
     public function getStatus()
     {
-        //return the status quote for the user based on their level
-        return $this->getStatusQuote();
+        try {
+            //return the status quote for the user based on their level
+            return $this->getStatusQuote();
+        } catch(\UnexpectedValueException $ex) {
+            return $ex->message();
+        }
     }
 
     protected function defineValue()
@@ -47,6 +51,9 @@ class EvangelistStatus
 
     protected function getStatusQuote()
     {
+        if (is_null($this->status) || trim($this->status) == '' || empty($this->status)) {
+            throw new \UnexpectedValueException("The value is not in the right formt");
+        }
         //based on the status of the user return a quote
         switch($this->status)
         {
