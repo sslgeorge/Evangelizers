@@ -13,12 +13,12 @@ class EvangelistStatusTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $babyEvangelist         = new GithubClientMock(__DIR__."/Mocks/andela-gjames.json");
-        $juniorEvangelist       = new GithubClientMock(__DIR__."/Mocks/andela-gjames.json");
+        $juniorEvangelist       = new GithubClientMock(__DIR__."/Mocks/juniordeveloper.json");
         $associateGithubClient  = new GithubClientMock(__DIR__."/Mocks/laravel.json");
         $seniorGithubClient     = new GithubClientMock(__DIR__."/Mocks/unicodevloper.json");
 
         $this->babyEvangelist       = new EvangelistStatus('andela-gjames', $babyEvangelist);
-        $this->juniorEvangelist     = new EvangelistStatus('andela-gjames', $babyEvangelist);
+        $this->juniorEvangelist     = new EvangelistStatus('juniordeveloper', $juniorEvangelist);
         $this->associateEvangelist  = new EvangelistStatus('laravel', $associateGithubClient);
         $this->seniorEvangelist     = new EvangelistStatus('unicodevloper', $seniorGithubClient);
     }
@@ -32,14 +32,14 @@ class EvangelistStatusTest extends \PHPUnit_Framework_TestCase
         );
     }
 
-//    public function testJuniorEvangelist()
-//    {
-//        $this->assertSame(
-//            "Junior Evangelist: Real knowledge is to know the extent of one's ignorance",
-//            $this->juniorEvangelist->getStatus(),
-//            "Should return the same text for Junior Evangelist"
-//        );
-//    }
+    public function testJuniorEvangelist()
+    {
+        $this->assertSame(
+            "Junior Evangelist: Real knowledge is to know the extent of one's ignorance",
+            $this->juniorEvangelist->getStatus(),
+            "Should return the same text for Junior Evangelist"
+        );
+    }
 
     public function testAssociateEvangelist()
     {
