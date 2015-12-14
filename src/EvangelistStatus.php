@@ -9,8 +9,9 @@ class EvangelistStatus
     protected $status;
 
     /**
-     * Initializes an Evangelist, sets the username through the APIClient and also defines values for the user
-     * @param string    $username username of Repo to fetch
+     * Initializes an Evangelist, sets the username through the APIClient and also defines values for the user.
+     *
+     * @param string              $username   username of Repo to fetch
      * @param APIClient APIClient $api_client interface for APIClient to interact with
      */
     public function __construct($username, APIClient $api_client)
@@ -25,7 +26,8 @@ class EvangelistStatus
     }
 
     /**
-     * Calls the getStatusQuote() and returns the status of the repo based on the number of repositories
+     * Calls the getStatusQuote() and returns the status of the repo based on the number of repositories.
+     *
      * @return string statement for the user based on the number of repositories owned
      */
     public function getStatus()
@@ -35,7 +37,7 @@ class EvangelistStatus
     }
 
     /**
-     * Sets a status of the repositories as Junior, Associate, Senior or Baby
+     * Sets a status of the repositories as Junior, Associate, Senior or Baby.
      */
     protected function defineValue()
     {
@@ -56,7 +58,8 @@ class EvangelistStatus
     }
 
     /**
-     * returns the required text for each category of repositories
+     * returns the required text for each category of repositories.
+     *
      * @return string description of the repository
      */
     protected function getStatusQuote()
