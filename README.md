@@ -1,6 +1,6 @@
 #Evangelizer
 [![StyleCI](https://styleci.io/repos/47891772/shield)](https://styleci.io/repos/47891772)
-[![Coverage Status](https://coveralls.io/repos/andela-gjames/Evangelizers/badge.svg?branch=develop&service=github)](https://coveralls.io/github/andela-gjames/Evangelizers?branch=develop)
+[![Coverage Status](https://coveralls.io/repos/andela-gjames/Evangelizers/badge.svg?branch=develop&service=github)](https://coveralls.io/github/andela-gjames/Evangelizers?branch=develop) 
 [![Circle CI](https://circleci.com/gh/andela-gjames/Evangelizers/tree/develop.svg?style=svg)](https://circleci.com/gh/andela-gjames/Evangelizers/tree/develop)
 [![Build Status](https://travis-ci.org/andela-gjames/Evangelizers.svg?branch=develop)](https://travis-ci.org/andela-gjames/Evangelizers)
 
