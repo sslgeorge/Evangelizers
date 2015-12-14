@@ -1,12 +1,13 @@
 language: php
 php:
-  - 5.4
   - 5.5
   - 5.6
   - hhvm
 
 install:
-  - composer install
+  - travis_retry composer self-update && composer --version
+  - export PATH="$HOME/.composer/vendor/bin:$PATH"
+  - travis_retry composer install --prefer-dist --no-interaction
 
 before_script:
   - wget http://getcomposer.org/composer.phar
