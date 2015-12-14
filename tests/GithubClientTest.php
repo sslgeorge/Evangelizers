@@ -34,7 +34,7 @@ class GithubClientTest extends \PHPUnit_Framework_TestCase
 
     public function testGetRepositoriesName()
     {
-        $names1 = $this->client1->getName();
+        $names1 = $this->client1->getRepositoriesName();
         $names2 = $this->client2->getName();
 
         $this->assertSame('emoji-cheat-sheet.com', $names1[0]);
