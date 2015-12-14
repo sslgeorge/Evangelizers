@@ -14,4 +14,4 @@ test:
   post:
     - php vendor/bin/coveralls
 environment:
-    COVERALLS_REPO_TOKEN: JxWv7v5xCzDcjvpdGDmodREwqCyCZ0Tiy
+    COVERALLS_REPO_TOKEN: ouDTwtLUPi6rYG4tuKKM6An99DXFsDDP9
