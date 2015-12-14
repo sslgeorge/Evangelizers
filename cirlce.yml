@@ -13,6 +13,5 @@ test:
     - phpunit -c phpunit.xml
   post:
     - php vendor/bin/coveralls
-COVERALLS_REPO_TOKEN:
-  repo_token:
-    - JxWv7v5xCzDcjvpdGDmodREwqCyCZ0Tiy
+environment:
+    COVERALLS_REPO_TOKEN: JxWv7v5xCzDcjvpdGDmodREwqCyCZ0Tiy
