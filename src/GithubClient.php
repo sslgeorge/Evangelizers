@@ -26,10 +26,11 @@ class GithubClient implements APIClient
     }
 
     /**
-     * Magic and convinence method to enable call to any property in the returned data
+     * Magic and convinence method to enable call to any property in the returned data.
      *
-     * @param  mixed $methodName represents the method name when a function that does not exist is called
-     * @param  mixed $args       arguments passed to the function, in this case it is null
+     * @param mixed $methodName represents the method name when a function that does not exist is called
+     * @param mixed $args       arguments passed to the function, in this case it is null
+     *
      * @return mixed data return is based on the type of value
      */
     public function __call($methodName, $args)
@@ -49,9 +50,9 @@ class GithubClient implements APIClient
     }
 
     /**
-     * Function makes the call to the github API, and also converts the return JSON to array
+     * Function makes the call to the github API, and also converts the return JSON to array.
      *
-     * @return array  when the JSON has been parsed
+     * @return array when the JSON has been parsed
      */
     public function getRepositories()
     {
@@ -66,7 +67,7 @@ class GithubClient implements APIClient
     }
 
     /**
-     * Counts the number of available repositories
+     * Counts the number of available repositories.
      *
      * @return int of the number of respositories
      */
@@ -78,7 +79,8 @@ class GithubClient implements APIClient
     }
 
     /**
-     * Returns the name of repositories returned from API call
+     * Returns the name of repositories returned from API call.
+     *
      * @return array of repositories name
      */
     public function getRepositoriesName()
@@ -88,7 +90,8 @@ class GithubClient implements APIClient
     }
 
     /**
-     * Sets the username to make API call to
+     * Sets the username to make API call to.
+     *
      * @param string $username represents username of GITHUB account to make API call to
      */
     public function setUsername($username)
@@ -98,9 +101,11 @@ class GithubClient implements APIClient
     }
 
     /**
-     * Gets a particular field from the returned array of the API call
-     * @param  string $key field to return
-     * @return mixed  of data requested by the $key
+     * Gets a particular field from the returned array of the API call.
+     *
+     * @param string $key field to return
+     *
+     * @return mixed of data requested by the $key
      */
     private function get($key)
     {
@@ -110,7 +115,8 @@ class GithubClient implements APIClient
         //Throw custom exception if $data is not in the proper parseable format
         if (!is_array($repos)) {
             throw new InvalidDataException('Problem loading data, ensure proper format of data');
-            return null;
+
+            return;
         }
         //Loop through each repo return
         foreach ($repos as $data) {
