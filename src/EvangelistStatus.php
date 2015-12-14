@@ -8,6 +8,11 @@ class EvangelistStatus
     protected $api_client;
     protected $status;
 
+    /**
+     * Initializes an Evangelist, sets the username through the APIClient and also defines values for the user
+     * @param string    $username username of Repo to fetch
+     * @param APIClient APIClient $api_client interface for APIClient to interact with
+     */
     public function __construct($username, APIClient $api_client)
     {
         $this->username = $username;
@@ -19,16 +24,19 @@ class EvangelistStatus
         $this->defineValue();
     }
 
+    /**
+     * Calls the getStatusQuote() and returns the status of the repo based on the number of repositories
+     * @return string statement for the user based on the number of repositories owned
+     */
     public function getStatus()
     {
-        try {
-            //return the status quote for the user based on their level
-            return $this->getStatusQuote();
-        } catch (\UnexpectedValueException $ex) {
-            return $ex->message();
-        }
+        //return the status quote for the user based on their level
+        return $this->getStatusQuote();
     }
 
+    /**
+     * Sets a status of the repositories as Junior, Associate, Senior or Baby
+     */
     protected function defineValue()
     {
         //get the number of repos owned by this user
@@ -47,11 +55,12 @@ class EvangelistStatus
         }
     }
 
+    /**
+     * returns the required text for each category of repositories
+     * @return string description of the repository
+     */
     protected function getStatusQuote()
     {
-        if (is_null($this->status) || trim($this->status) === '' || empty($this->status)) {
-            throw new \UnexpectedValueException('The value is not in the right formt');
-        }
         //based on the status of the user return a quote
         switch ($this->status) {
             case 'Junior Evangelist':

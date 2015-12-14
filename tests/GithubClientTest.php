@@ -2,6 +2,8 @@
 namespace C3P0\Tests;
 
 use C3P0\Tests\Mocks\GithubClientMock;
+use C3P0\App\Exceptions\InvalidDataException;
+use C3P0\App\Exceptions\InvalidMethodException;
 
 class GithubClientTest extends \PHPUnit_Framework_TestCase
 {
@@ -41,4 +43,27 @@ class GithubClientTest extends \PHPUnit_Framework_TestCase
         $this->assertSame('art', $names2[0]);
         $this->assertSame('socialite', $names2[17]);
     }
+
+    /**
+     * @expectedException Exception
+     *
+     */
+    public function testInvalidMethodException()
+    {
+       $this->client1->get();
+       $this->client2->get();
+    }
+
+    /**
+     * @expectedException Exception
+     *
+     */
+    public function testInvalidDataException()
+    {
+        $data = new GithubClientMock(__DIR__."/Mocks/InvalidDataStructure.json");
+        $data->getRepositories();
+        $result = $data->getName();
+        $this->assertInternalType('array', $result);
+    }
+
 }
