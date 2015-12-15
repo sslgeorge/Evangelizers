@@ -44,14 +44,12 @@ class EvangelistStatus
         //get the number of repos owned by this user
         $count = $this->api_client->getRepositoriesCount();
 
-        //Based on the number in the variable $count, categorize users and set
-        //status variable to the value
-        if ($count >= 5 && $count <= 10) {
-            $this->status = 'Junior Evangelist';
-        } elseif ($count >= 11 && $count <= 20) {
-            $this->status = 'Associate Evangelist';
-        } elseif ($count >= 21) {
+        if ($count >= 21) {
             $this->status = 'Senior Evangelist';
+        } elseif ($count >= 11) {
+            $this->status = 'Associate Evangelist';
+        } elseif ($count >= 5) {
+            $this->status = 'Junior Evangelist';
         } else {
             $this->status = 'Baby Evangelist';
         }

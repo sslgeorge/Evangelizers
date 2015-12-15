@@ -12,8 +12,8 @@ class GithubClientTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->client1 = new GithubClientMock(__DIR__."/Mocks/andela-gjames.json");
-        $this->client2 = new GithubClientMock(__DIR__."/Mocks/laravel.json");
+        $this->client1 = new GithubClientMock(__DIR__."/Mocks/Fixtures/andela-gjames.json");
+        $this->client2 = new GithubClientMock(__DIR__."/Mocks/Fixtures/laravel.json");
     }
 
     public function testGetRepositoriesReturnType()
@@ -60,7 +60,7 @@ class GithubClientTest extends \PHPUnit_Framework_TestCase
      */
     public function testInvalidDataException()
     {
-        $data = new GithubClientMock(__DIR__."/Mocks/InvalidDataStructure.json");
+        $data = new GithubClientMock(__DIR__."/Mocks/Fixtures/InvalidDataStructure.json");
         $data->getRepositories();
         $result = $data->getName();
         $this->assertInternalType('array', $result);

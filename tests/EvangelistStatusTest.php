@@ -12,10 +12,10 @@ class EvangelistStatusTest extends \PHPUnit_Framework_TestCase
     private $seniorEvangelist;
     public function setUp()
     {
-        $babyEvangelist         = new GithubClientMock(__DIR__."/Mocks/andela-gjames.json");
-        $juniorEvangelist       = new GithubClientMock(__DIR__."/Mocks/juniordeveloper.json");
-        $associateGithubClient  = new GithubClientMock(__DIR__."/Mocks/laravel.json");
-        $seniorGithubClient     = new GithubClientMock(__DIR__."/Mocks/unicodevloper.json");
+        $babyEvangelist         = new GithubClientMock(__DIR__."/Mocks/Fixtures/andela-gjames.json");
+        $juniorEvangelist       = new GithubClientMock(__DIR__."/Mocks/Fixtures/juniordeveloper.json");
+        $associateGithubClient  = new GithubClientMock(__DIR__."/Mocks/Fixtures/laravel.json");
+        $seniorGithubClient     = new GithubClientMock(__DIR__."/Mocks/Fixtures/unicodevloper.json");
 
         $this->babyEvangelist       = new EvangelistStatus('andela-gjames', $babyEvangelist);
         $this->juniorEvangelist     = new EvangelistStatus('juniordeveloper', $juniorEvangelist);
